@@ -32,22 +32,22 @@
                                 </thead>
                                 <tbody>
                                     {{-- @php($i = 1) --}}
-                                    @foreach ($brands as $item)
+                                    @foreach ($brands as $brand)
                                         <tr>
                                             <td> {{ $brands->firstItem() + $loop->index }}</td>
-                                            <td>{{ $item->brand_name}}</td>
-                                            <td><img src="" alt=""></td>
+                                            <td>{{ $brand->brand_name}}</td>
+                                            <td><img src="{{ asset($brand->brand_image) }}" alt="" style="height: 100px; width:100px;"></td>
                                             <td>
-                                                @if ($item->created_at == null)
+                                                @if ($brand->created_at == null)
                                                     <span>No Date is Updated</span>
                                                 @else
-                                                    {{ $item->created_at->diffForHumans() }}
+                                                    {{ $brand->created_at->diffForHumans() }}
                                                 @endif
                                             </td>
                                             <td>
-                                                <a href="{{ url('brand/edit/' . $item->id) }}"
+                                                <a href="{{ url('brand/edit/' . $brand->id) }}"
                                                     class="btn btn-info">Edit</a>
-                                                <a href="{{ url('softdelete/brand/' . $item->id) }}"
+                                                <a href="{{ url('softdelete/brand/' . $brand->id) }}"
                                                     class="btn btn-danger">Delete</a>
                                             </td>
 
