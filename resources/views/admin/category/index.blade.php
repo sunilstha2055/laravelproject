@@ -65,7 +65,7 @@
                             Add Category
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('store.category') }}" method="post">
+                            <form action="{{ route('store.category') }}" method="post" >
                                 @csrf
                                 <div class="form-group">
                                     <label for="category">Category</label>
