@@ -28,7 +28,7 @@
                                 <div class="form-group">
                                     <label for="category">Edit Brand Image</label>
                                     <input type="file" class="form-control" name="brand_image"
-                                        value="{{ $brands->brand_image }}">
+                                        >
                                     @error('image')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
