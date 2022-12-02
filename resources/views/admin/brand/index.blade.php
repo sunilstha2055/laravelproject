@@ -1,9 +1,6 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            All Brand
-        </h2>
-    </x-slot>
+@extends('admin.admin_master')
+@section('admin')
+
 
     <div class="py-12">
         <div class="container">
@@ -47,7 +44,7 @@
                                             <td>
                                                 <a href="{{ url('brand/edit/' . $brand->id) }}"
                                                     class="btn btn-info">Edit</a>
-                                                <a href="{{ url('softdelete/brand/' . $brand->id) }}"
+                                                <a href="{{ url('brand/delete/' . $brand->id) }}" onclick="return confirm('Are you sure to delete')"
                                                     class="btn btn-danger">Delete</a>
                                             </td>
 
@@ -90,4 +87,4 @@
         </div>
        
     </div>
-</x-app-layout>
+@endsection
